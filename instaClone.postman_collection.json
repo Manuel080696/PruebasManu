@@ -58,7 +58,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/user/13",
+							"raw": "http://127.0.0.1:3000/user/:userId",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -69,7 +69,13 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"13"
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
 							]
 						}
 					},
@@ -133,7 +139,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/user/13",
+							"raw": "http://127.0.0.1:3000/user/:userId",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -144,7 +150,13 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"13"
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
 							]
 						}
 					},
@@ -165,7 +177,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/user/13",
+							"raw": "http://127.0.0.1:3000/user/:userId",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -176,7 +188,13 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"13"
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": null
+								}
 							]
 						}
 					},
@@ -232,18 +250,18 @@
 							"formdata": [
 								{
 									"key": "place",
-									"value": "Argentina",
+									"value": "Ubicación de la foto",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "Que mira bobo",
+									"value": "Descripcion a insertar",
 									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/mgman/Desktop/fotosDePrueba/man-2442565_1280.jpg"
+									"src": []
 								}
 							]
 						},
@@ -273,11 +291,16 @@
 						"method": "GET",
 						"header": [],
 						"body": {
-							"mode": "formdata",
-							"formdata": []
+							"mode": "raw",
+							"raw": "{\r\n    \"search\": \"Palabra a buscar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/:searchResult",
+							"raw": "http://127.0.0.1:3000/photos/search",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -288,13 +311,7 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":searchResult"
-							],
-							"variable": [
-								{
-									"key": "searchResult",
-									"value": null
-								}
+								"search"
 							]
 						}
 					},
@@ -313,7 +330,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/4",
+							"raw": "http://127.0.0.1:3000/photos/:id",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -324,7 +341,13 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								"4"
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
 							]
 						}
 					},
@@ -392,7 +415,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/1/like",
+							"raw": "http://127.0.0.1:3000/photos/:photoId/like",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -403,8 +426,14 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								"1",
+								":photoId",
 								"like"
+							],
+							"variable": [
+								{
+									"key": "photoId",
+									"value": null
+								}
 							]
 						}
 					},
@@ -436,7 +465,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/photos/4/comment",
+							"raw": "http://localhost:3000/photos/:photoId/comment",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -444,15 +473,21 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								"4",
+								":photoId",
 								"comment"
+							],
+							"variable": [
+								{
+									"key": "photoId",
+									"value": null
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "UncommentController",
+					"name": "unCommentController",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -463,7 +498,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/photos/4/uncomment/5",
+							"raw": "http://localhost:3000/photos/:photoId/uncomment/:commentId",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -471,9 +506,19 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								"4",
+								":photoId",
 								"uncomment",
-								"5"
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "photoId",
+									"value": null
+								},
+								{
+									"key": "commentId",
+									"value": null
+								}
 							]
 						}
 					},
