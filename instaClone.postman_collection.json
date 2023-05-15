@@ -15,13 +15,45 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"name\": \"Luna\",\r\n        \"lastName\": \"García Reyes\",\r\n        \"email\": \"luGarcía22@correo.com\",\r\n        \"userName\": \"luisag227\",\r\n        \"password\": \"Luisa15_06_914\",\r\n        \"birthDay\": \"1991/05/01\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Luna24",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "García Reyes24",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "luGarcía224@correo.com",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "luisag227324",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Luisa15_06_9147724",
+									"type": "text"
+								},
+								{
+									"key": "birthDay",
+									"value": "1991/05/01",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/mgman/Desktop/fotosDePrueba/man-2442565_1280.jpg",
+									"disabled": true
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "http://127.0.0.1:3000/user",
