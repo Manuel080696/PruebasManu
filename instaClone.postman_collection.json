@@ -19,38 +19,38 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Luna24",
+									"value": "Nombre",
 									"type": "text"
 								},
 								{
 									"key": "lastName",
-									"value": "García Reyes24",
+									"value": "Apellidos",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "luGarcía224@correo.com",
+									"value": "nombreCorreo@correo.com",
 									"type": "text"
 								},
 								{
 									"key": "userName",
-									"value": "luisag227324",
+									"value": "NombreUsuario",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "Luisa15_06_9147724",
+									"value": "Contraseña",
 									"type": "text"
 								},
 								{
 									"key": "birthDay",
-									"value": "1991/05/01",
+									"value": "YYYY/MM/DD",
 									"type": "text"
 								},
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/mgman/Desktop/fotosDePrueba/man-2442565_1280.jpg",
+									"src": [],
 									"disabled": true
 								}
 							]
@@ -90,7 +90,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/user/:userId",
+							"raw": "http://127.0.0.1:3000/user/:userID",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -101,11 +101,11 @@
 							"port": "3000",
 							"path": [
 								"user",
-								":userId"
+								":userID"
 							],
 							"variable": [
 								{
-									"key": "userId",
+									"key": "userID",
 									"value": null
 								}
 							]
@@ -132,7 +132,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"luGarcía22@correo.com\",\r\n    \"password\": \"Luisa15_06_9142\"\r\n}",
+							"raw": "{\r\n    \"email\": \"nombreCorreo@correo.com\",\r\n    \"password\": \"contraseña\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -161,15 +161,6 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://127.0.0.1:3000/user/:userId",
 							"protocol": "http",
@@ -198,18 +189,45 @@
 					"name": "updateUserController",
 					"request": {
 						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
 							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Nombre",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Apellidos",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Nombre de Usuario",
+									"type": "text"
+								},
+								{
+									"key": "birthDay",
+									"value": "YYYY/MM/DD",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": []
+								}
+							]
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/user/:userId",
+							"raw": "http://127.0.0.1:3000/user/:userID",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -220,11 +238,11 @@
 							"port": "3000",
 							"path": [
 								"user",
-								":userId"
+								":userID"
 							],
 							"variable": [
 								{
-									"key": "userId",
+									"key": "userID",
 									"value": null
 								}
 							]
@@ -245,8 +263,7 @@
 							{
 								"key": "Authorization",
 								"value": "{{TOKEN}}",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
@@ -287,7 +304,7 @@
 								},
 								{
 									"key": "description",
-									"value": "Descripcion a insertar",
+									"value": "Descripción de la foto",
 									"type": "text"
 								},
 								{
@@ -362,7 +379,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/:id",
+							"raw": "http://127.0.0.1:3000/photos/:photoID",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -373,11 +390,11 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":id"
+								":photoID"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "photoID",
 									"value": null
 								}
 							]
@@ -398,16 +415,10 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "Authorization",
-									"value": "",
-									"type": "text"
-								}
-							]
+							"formdata": []
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/:id",
+							"raw": "http://127.0.0.1:3000/photos/:photoID",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -418,11 +429,11 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":id"
+								":photoID"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "photoID",
 									"value": null
 								}
 							]
@@ -447,7 +458,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:3000/photos/:photoId/like",
+							"raw": "http://127.0.0.1:3000/photos/:photoID/like",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -458,12 +469,12 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":photoId",
+								":photoID",
 								"like"
 							],
 							"variable": [
 								{
-									"key": "photoId",
+									"key": "photoID",
 									"value": null
 								}
 							]
@@ -489,7 +500,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": " {\n    \"comment\":\"Hola Paco\"\n}\n",
+							"raw": " {\n    \"comment\":\"Comentario\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -497,7 +508,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/photos/:photoId/comment",
+							"raw": "http://localhost:3000/photos/:photoID/comment",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -505,12 +516,12 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":photoId",
+								":photoID",
 								"comment"
 							],
 							"variable": [
 								{
-									"key": "photoId",
+									"key": "photoID",
 									"value": null
 								}
 							]
@@ -530,7 +541,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/photos/:photoId/uncomment/:commentId",
+							"raw": "http://localhost:3000/photos/:photoID/uncomment/:commentID",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -538,17 +549,17 @@
 							"port": "3000",
 							"path": [
 								"photos",
-								":photoId",
+								":photoID",
 								"uncomment",
-								":commentId"
+								":commentID"
 							],
 							"variable": [
 								{
-									"key": "photoId",
+									"key": "photoID",
 									"value": null
 								},
 								{
-									"key": "commentId",
+									"key": "commentID",
 									"value": null
 								}
 							]
